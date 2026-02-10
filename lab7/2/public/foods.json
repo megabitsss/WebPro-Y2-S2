@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Pad Thai",
+    "href": "padthai",
+    "image": "src/padthai.jpg",
+    "ingredients": ["rice noodles", "shrimp", "egg", "bean sprouts", "peanuts"],
+    "nutrition": {
+      "calories": 450,
+      "protein": "20g",
+      "fat": "15g",
+      "carbohydrates": "55g"
+    },
+    "regionAvailable": ["Thailand", "Southeast Asia"]
+  },
+  {
+    "id": 2,
+    "name": "Sushi",
+    "href": "sushi",
+    "image": "src/sushi.jpg",
+    "ingredients": ["rice", "raw fish", "seaweed"],
+    "nutrition": {
+      "calories": 300,
+      "protein": "18g",
+      "fat": "5g",
+      "carbohydrates": "40g"
+    },
+    "regionAvailable": ["Japan", "East Asia"]
+  },
+  {
+    "id": 3,
+    "name": "Pizza",
+    "href": "pizza",
+    "image": "src/pizza.jpg",
+    "ingredients": ["dough", "tomato sauce", "cheese", "pepperoni"],
+    "nutrition": {
+      "calories": 550,
+      "protein": "22g",
+      "fat": "25g",
+      "carbohydrates": "60g"
+    },
+    "regionAvailable": ["Italy", "Worldwide"]
+  },
+  {
+    "id": 4,
+    "name": "Burger",
+    "href": "burger",
+    "image": "src/burger.jpg",
+    "ingredients": ["beef patty", "bun", "lettuce", "tomato", "cheese"],
+    "nutrition": {
+      "calories": 600,
+      "protein": "25g",
+      "fat": "30g",
+      "carbohydrates": "45g"
+    },
+    "regionAvailable": ["United States", "Worldwide"]
+  },
+  {
+    "id": 5,
+    "name": "Bibimbab",
+    "href": "bibimbab",
+    "image": "src/bibimbab.jpg",
+    "ingredients": ["rice", "vegetables", "egg", "beef", "gochujang"],
+    "nutrition": {
+      "calories": 500,
+      "protein": "23g",
+      "fat": "18g",
+      "carbohydrates": "60g"
+    },
+    "regionAvailable": ["South Korea", "East Asia"]
+  },
+  {
+    "id": 6,
+    "name": "Tacos",
+    "href": "taco",
+    "image": "src/taco.jpg",
+    "ingredients": ["tortilla", "beef", "onion", "cilantro"],
+    "nutrition": {
+      "calories": 350,
+      "protein": "17g",
+      "fat": "14g",
+      "carbohydrates": "35g"
+    },
+    "regionAvailable": ["Mexico", "North America"]
+  }
+]

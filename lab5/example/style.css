@@ -1,0 +1,49 @@
+
+* {
+  box-sizing:border-box;
+}
+
+.left {
+  background-color:#2196F3;
+  padding:20px;
+  float:left;
+  width:33%; 
+}
+.main {
+  background-color:rgb(188, 32, 23);
+  padding:20px;
+  float:left;
+  width:33%; 
+}
+.right {
+  background-color:#4CAF50;
+  padding:20px;
+  float:left;
+  width:33%; 
+}
+
+.card {
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+
+
+@media screen and (max-width:1000px) {
+  .left, .main {
+    width:46%; 
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .left, .main, .right {
+    width:100%;
+  }
+}

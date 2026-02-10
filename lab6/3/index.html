@@ -1,0 +1,86 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 6/3</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+                padding: 2% 0 2% 0;
+            }
+
+            h1 {
+                margin: 2% 0 2% 0;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form">
+            <!-- <input type="radio" id="apple" value="apple" name="hello">
+            <label for="apple">Apple</label>
+            <input type="radio" id="banana" value="banana" name="hello">
+            <label for="banana">Banana</label>
+            <input type="radio" id="cat" value="cat" name="hello">
+            <label for="cat">Cat</label> -->
+        </form>
+        <script>
+            var form = document.getElementById("form");
+            function display(data) {
+                data.forEach(function (data, index) {
+                    console.log(data);
+                    let header = document.createElement("h1");
+                    let radioBtn1 = document.createElement("input")
+                    let label1 = document.createElement("label");
+                    let radioBtn2 = document.createElement("input")
+                    let label2 = document.createElement("label");
+                    let radioBtn3 = document.createElement("input")
+                    let label3 = document.createElement("label");
+
+                    radioBtn1.type = "radio"
+                    radioBtn1.name = index;
+                    radioBtn1.value = data.answers.a;
+                    radioBtn1.id = "q" + (index+1) + "_a";
+
+                    radioBtn2.type = "radio"
+                    radioBtn2.name = index;
+                    radioBtn2.value = data.answers.b;
+                    radioBtn2.id = "q" + (index+1) + "_b";
+
+                    radioBtn3.type = "radio"
+                    radioBtn3.name = index;
+                    radioBtn3.value = data.answers.c;
+                    radioBtn3.id = "q" + (index+1) + "_c";
+
+                    //for เป็น restric word ใน JavaScript --> Use "htmlFor"
+                    label1.appendChild(document.createTextNode(data.answers.a));
+                    label1.htmlFor = "q" + (index+1) + "_a";
+                    label2.appendChild(document.createTextNode(data.answers.b));
+                    label2.htmlFor = "q" + (index+1) + "_b";
+                    label3.appendChild(document.createTextNode(data.answers.c));
+                    label3.htmlFor = "q" + (index+1) + "_c";
+
+                    header.appendChild(document.createTextNode(index+1 +". " + data.question));
+
+                    form.appendChild(header);
+                    form.appendChild(radioBtn1);
+                    form.appendChild(label1);
+                    form.appendChild(document.createElement("br"));
+                    form.appendChild(radioBtn2);
+                    form.appendChild(label2);
+                    form.appendChild(document.createElement("br"));
+                    form.appendChild(radioBtn3);
+                    form.appendChild(label3);
+                    form.appendChild(document.createElement("br"));
+                });
+            }
+                fetch('questionAnswerData.json')
+                .then(response => response.json())
+                .then(data => display(data))
+                .catch(error => console.log('error', error))
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,80 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    color: white;
+    background-color: rgb(225, 222, 222);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    margin: 4rem 4rem 4rem 4rem;
+}
+
+.card {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    text-align: center;
+    /* border: black 1px solid; */
+    flex-direction: column;
+    padding: 10px;
+    background-color: crimson;
+    height: 100%;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 7/8;
+    /* display: block; */
+    object-fit: cover;
+    object-position: center;
+}
+
+h3 {
+    margin: 0 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    background-color: rgb(225, 67, 99);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+@media screen and (max-width: 1400px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

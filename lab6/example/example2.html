@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+        function heroes(data) {
+            let text = data.squadName + "<br> Hometown: " + data.homeTown + "<br><br>";
+            data.members.forEach(function (member, index) {
+                text += (index+1) + ". " + member.name + " (" + member.age + ") [" + member.secretIdentity + "]<br>";
+                member.powers.forEach(function (power) {
+                    text += "* " + power + "<br>";
+                });
+                text += "<br>";
+            });
+            document.getElementById("div1").innerHTML = text;
+        }
+
+        fetch('superheroes.json') //parameter is ชื่อของไฟล์ข้อมูลที่จะใช้
+            .then(response => response.json()) //แปลง string ใน json file ให้อยู่ในรูป object
+            .then(data => heroes(data)) //จะไปเก็บ object ในตัวแปร data
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+</html>

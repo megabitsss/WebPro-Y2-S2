@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <style>
+        @font-face {
+            font-family: myWebFont;
+            src: url(ChakraPetch-Regular.ttf);
+        }
+
+        body {
+            font-family: myWebFont;
+        }
+
+        td, th {
+            border: 1px black solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p id="orderID"><b>Order ID: </b></p>
+    <p id="orderDate"><b>Order Date: </b></p>
+    <p id="customerName"><b>Customer: </b></p>
+    <p id="customerEmail"><b>Email: </b></p>
+    <table id="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Product
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+        <!-- <tr>
+            <td>Some text1</td>
+            <td>Some text2</td>
+        </tr> -->
+    </table>
+
+    <h1>Shipping</h1>
+    <p id="address"><b>Address: </b></p>
+
+    <script>
+        function display(data) {
+            var index = 1;
+            document.getElementById("orderID").innerHTML += data.orderId;
+            document.getElementById("orderDate").innerHTML += data.orderDate;
+            document.getElementById("customerName").innerHTML += data.customer.name;
+            document.getElementById("customerEmail").innerHTML += data.customer.email;
+            let addressArr = data.shipping.address;
+            document.getElementById("address").innerHTML += addressArr.street + ", " + addressArr.city + ", " + addressArr.state + addressArr.zipCode;
+            let table = document.getElementById("table");
+            data.items.forEach(function (item) { //data.items -> list of each product
+                let row = document.createElement("tr");
+                let id = document.createElement("td");
+                let name = document.createElement("td");
+                let quantity= document.createElement("td");
+                let price = document.createElement("td");
+                let total = document.createElement("td");
+
+                id.appendChild(document.createTextNode(item.productId));
+                name.appendChild(document.createTextNode(item.name));
+                quantity.appendChild(document.createTextNode(item.quantity));
+                price.appendChild(document.createTextNode(item.price));
+                total.appendChild(document.createTextNode(item.price * item.quantity));
+
+                row.appendChild(id);
+                row.appendChild(name);
+                row.appendChild(quantity);
+                row.appendChild(price);
+                row.appendChild(total);
+                table.appendChild(row);
+
+                index += 1;
+            });
+        }
+
+
+        fetch('order.json')
+            .then(response => response.json())
+            .then(data => display(data))
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+</html>

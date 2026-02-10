@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock - 1</title>
+    <style>
+        @font-face {
+            font-family: myFont;
+            src: url(SegoeUI.ttf);
+        }
+
+        body {
+            font-family: myFont;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            width: 80%;
+            text-align: left;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: rgb(23, 165, 209);
+            color: white;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                NAME
+            </th>
+            <th>
+                GENDER
+            </th>
+            <th>
+                POSITION
+            </th>
+            <th>
+                POSITION BAR
+            </th>
+            <th>
+                ADDRESS
+            </th>
+        </tr>
+    </table>
+
+    <script>
+        function display(data) {
+            data.forEach( function(item) {
+                let table = document.getElementById("table");
+                let row = document.createElement("tr");
+                let id = document.createElement("td");
+                let name = document.createElement("td");
+                let gender = document.createElement("td");
+                let position = document.createElement("td");
+                let positionBar = document.createElement("td");
+                let address = document.createElement("td");
+
+                id.appendChild(document.createTextNode(item.id));
+                name.appendChild(document.createTextNode(item.name));
+
+                genderText = document.createElement("p");
+                genderText.appendChild(document.createTextNode(item.gender));
+                genderText.style.width = "30%";
+                genderText.style.borderRadius = "999px";
+                genderText.style.textAlign = "center";
+                gender.appendChild(genderText);
+
+                if (item.gender == "M") {
+                    genderText.style.color = "red";
+                    genderText.style.backgroundColor = "pink";
+                } else {
+                    genderText.style.color = "blue";
+                    genderText.style.backgroundColor = "lightblue";
+                }
+                gender.appendChild(genderText);
+                
+                position.appendChild(document.createTextNode(item.position));
+                id.appendChild(document.createTextNode(item.id));
+
+                let divBarTop = document.createElement("div");
+                let divBarBottom = document.createElement("div");
+                positionBar.appendChild(divBarBottom);
+                divBarBottom.appendChild(divBarTop);
+                divBarBottom.style.backgroundColor = "rgb(179, 186, 179)";
+                divBarBottom.style.width = "100%";
+                divBarBottom.style.height = "16px";
+                divBarBottom.style.borderRadius = "10px";
+
+                divBarTop.style.backgroundColor = "green";
+                divBarTop.style.width = item.position_bar+"%";
+                divBarTop.style.height = "16px";
+                divBarTop.style.borderRadius = "10px";
+
+                address.appendChild(document.createTextNode(item.address));
+
+                if (item.id % 2) {
+                    row.style.backgroundColor = "rgb(239, 232, 232)";
+                }
+
+                row.appendChild(id);
+                row.appendChild(name);
+                row.appendChild(gender);
+                row.appendChild(position);
+                row.appendChild(positionBar);
+                row.appendChild(address);
+                table.appendChild(row);
+            });
+
+        }
+
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => display(data))
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+</html>

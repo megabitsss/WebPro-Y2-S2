@@ -1,0 +1,17 @@
+// database.js
+const mysql = require('mysql2');
+const conn = mysql.createConnection({
+    host: "webdev.it.kmitl.ac.th",
+    user: "s67070041",
+    password: "LXJ32AJN25U",
+    database: "s67070041"
+});
+
+// open the MySQL connection (เช็คว่าใช้งานได้มั้ย)
+conn.connect(error => {
+    if (error) throw error;
+    console.log("Successfully connected to the database.");
+});
+
+module.exports = conn;
+

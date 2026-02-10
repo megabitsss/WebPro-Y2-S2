@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6/1</title>
+    <style>
+        @font-face {
+            font-family: myFont;
+            src: url(SegoeUI.ttf);
+        }
+
+        th,td {
+            padding: 6px;
+        }
+
+        th {
+            border-bottom: 3px solid rgb(208, 202, 202);
+        }
+
+        td {
+            border-bottom: 1px solid rgb(234, 234, 234);
+        }
+
+        body {
+            font-family: myFont;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Address
+            </th>
+        </tr>
+    </table>
+
+
+    <script>
+        function display(data) {
+            let table = document.getElementById("table");
+            data.forEach(function (item) {
+                let row = document.createElement("tr");
+
+                let id = document.createElement("td");
+                let name = document.createElement("td");
+                let gender = document.createElement("td");
+                let position = document.createElement("td");
+                let address = document.createElement("td");
+
+                id.appendChild(document.createTextNode(item.id));
+                name.appendChild(document.createTextNode(item.FirstName + " " + item.LastName));
+                gender.appendChild(document.createTextNode(item.Gender));
+                position.appendChild(document.createTextNode(item.Position));
+                address.appendChild(document.createTextNode(item.Address));
+
+                if (parseInt(item.id % 2)) {
+                    row.style.background = "rgb(245, 245, 245)";
+                }
+
+                row.appendChild(id);
+                row.appendChild(name);
+                row.appendChild(gender);
+                row.appendChild(position);
+                row.appendChild(address);
+
+                table.appendChild(row);
+            });
+        }
+
+        fetch('employees.json')
+            .then(response => response.json())
+            .then(data => display(data))
+            .catch(error => console.log('error', error))
+    </script>
+</body>
+</html>

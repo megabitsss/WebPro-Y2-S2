@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: black 1px solid;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subject List</h1>
+    <!-- ใส่ตารางในนี้ -->
+    <div id="div1"></div>
+    <script>
+        //heading
+        const departments = ['Mathematics', 'Science', 'Language Arts', 'Social Studies'];
+
+        const subjects = [
+            ["Calculus", "Physics", "English", "History"],
+            ["Algebra", "Chemistry", "Literature", "Geography"],
+            ["Geometry", "Biology", "Creative Writing", "Civics"],
+            ["Statistics", "Earth Science", "Poetry", "Economics"],
+            ["Trigonometry", "Astronomy", "Drama", "Political Science"],
+            ["Pre-Calculus", "Environmental Science", "Journalism", "Sociology"],
+            ["Linear Algebra", "Anatomy", "Public Speaking", "Psychology"],
+            ["Differential Equations", "Genetics", "Mythology", "Anthropology"],
+            ["Discrete Math", "Microbiology", "Technical Writing", "World History"],
+            ["Number Theory", "Ecology", "Film Studies", "Cultural Studies"]
+        ];
+
+    // สร้างตารางและเพิ่มข้อมูล ด้วย DOM
+    let div = document.getElementById("div1");
+    let table = document.createElement("table");
+    let tableHeadRow = document.createElement("tr");
+    departments.forEach(function (department) {
+        let th = document.createElement("th");
+        let txt = document.createTextNode(department);
+        th.appendChild(txt);
+        tableHeadRow.appendChild(th);
+    });
+    table.appendChild(tableHeadRow);
+
+    subjects.forEach(function (subjectRow) {
+        let tableBodyRow = document.createElement("tr");
+        subjectRow.forEach(function (subject) {
+            let tableColumn = document.createElement("td");
+            let txt = document.createTextNode(subject);
+            tableColumn.appendChild(txt);
+            tableBodyRow.appendChild(tableColumn);
+        });
+        table.appendChild(tableBodyRow);
+    });
+
+    div.appendChild(table);
+
+    </script>
+</body>
+</html>

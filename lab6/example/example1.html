@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 Example 1</title>
+</head>
+<body>
+    <p id="out"></p>
+    <script>
+        let person = { //object variable
+                "firstname":"John",
+                "lastname":"Doe",
+                "age":30,
+                "cars":[ "Toyota", "BMW", "BVD", "Honda","Hyndai"] //ใช้ [] ในการ get element
+            };
+        let text = person.firstname + " " + person.lastname + " is " + person.age + " years old. And he has <br>";
+        person.cars.forEach(function(car) { //function(running_variable)
+            text += "- " + car + "<br>";
+        });
+        document.getElementById("out").innerHTML = text;
+    </script>
+</body>
+</html>

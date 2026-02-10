@@ -1,0 +1,27 @@
+div {
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* horizontal center */
+}
+table {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+th, td {
+    border: gray 1px solid;
+    padding: 10px 35px 10px 35px;
+    /* margin: 0px; */
+}
+
+th {
+    background-color: rgb(202, 202, 202);
+}
+
+button {
+    background-color: rgb(62, 137, 235);
+    color: white;
+    border: 0px;
+    padding: 8px;
+    border-radius: 6px;
+}

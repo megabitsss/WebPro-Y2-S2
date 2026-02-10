@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3/1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="box">
+        <h1>User Registration</h1>
+        <form>
+            <div><label for="uname">Username:</label><br>
+            <input type="text" id="uname" name="uname"></div>
+
+            <div><label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" placeholder="e.g., user@example.com"></div>
+
+            <div><label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" placeholder="e.g., 555-555-5555"></div>
+
+            <div><label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd"></div>
+
+            <div><label for="confirm">Confirm Password:</label><br>
+            <input type="password" id="confirm"></div>
+        </form>
+        <div id="btn"><button onclick="validateForm()">Register</button></div>
+    </div>
+
+    <script src="validate.js"></script>
+</body>
+</html>

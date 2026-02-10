@@ -1,0 +1,86 @@
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: "Prompt", sans-serif;
+    height: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+#container {
+    /* border: 1px black solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#add-row form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#clear-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#clear-row button, #add-row button {
+    color: white;
+    background-color: rgb(30, 106, 213);
+    border: none;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    border-radius: 0.75rem;
+}
+
+#movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#inputBox {
+    font-family: inherit;
+    width: 80%;
+    border: none;
+    border: 1px solid rgb(197, 197, 197);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.dataBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(230, 230, 226);
+}
+
+.dataBox p {
+    margin-left: 1rem;
+}
+
+.dataBox button {
+    margin-right: 1rem;
+}
+
+.itemRemove {
+    border: none;
+    background-color: rgb(197, 10, 10);
+    color: white;
+    border-radius: 12px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.itemRemove:hover {
+    background-color: rgb(225, 74, 74);
+}

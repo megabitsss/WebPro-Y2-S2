@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #listact {
+            background-color: salmon;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Moo Deng's Daily Activities</h1>
+    <p id="listact"></p>
+    <script>
+        let acts = ["Wakes up for a bath and waits for Mom to eat breakfast.",
+        "Walks around, showing off before heading to the water for a nap.",
+        "Takes a nap in the water.",
+        "Might get up for a stroll or a nap on land.",
+        "Naps on land.",
+        "Naps in the water again.",
+        "Mom gets out of the water for dinner while Moo Deng naps.",
+        "Mom eats grass while Moo Deng waits, occasionally running a bit, followed by a long nap until evening.",
+        "Plays with Mom in the water.",
+        "Drinks milk and playfully disturbs Mom.",
+        "Sleeps soundly for hours."];
+        let listHTML = "<ul>";
+        //act คือ running variable
+        acts.forEach(function(act) {
+            listHTML += "<li>" + act + "</li>";
+            //listHTML += `<li>${act}</li>`; คล้าย ๆ_ f-strings
+        });
+        listHTML += "</ul>";
+        document.getElementById("listact").innerHTML = listHTML;
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4/2</title>
+</head>
+<body>
+
+<div id="formArea"></div>
+
+<script>
+    let currentLang = "th";
+
+    const langData = {
+        th: {
+            firstName: "ชื่อ:",
+            lastName: "นามสกุล:",
+            country: "ประเทศ:",
+            countries: ["เลือกประเทศ", "ไทย", "เวียดนาม", "ลาว", "มาเลเซีย", "สิงคโปร์"],
+            button: "เปลี่ยนเป็นภาษาอังกฤษ"
+        },
+        en: {
+            firstName: "First Name:",
+            lastName: "Last Name:",
+            country: "Country:",
+            countries: ["Select a country", "Thailand", "Vietnam", "Laos", "Malaysia", "Singapore"],
+            button: "Change to Thai"
+        }
+    };
+
+    const createRow = (labelText, type = "text") => {
+        const row = document.createElement("div");
+
+        const label = document.createElement("label");
+        label.textContent = labelText;
+
+        const input = document.createElement("input");
+        input.type = type;
+
+        row.append(label, input);
+        return row;
+    };
+
+    const createSelectRow = (labelText, options) => {
+        const row = document.createElement("div");
+
+        const label = document.createElement("label");
+        label.textContent = labelText;
+
+        const select = document.createElement("select");
+        options.forEach(text => {
+            const option = document.createElement("option");
+            option.textContent = text;
+            select.appendChild(option);
+        });
+
+        row.append(label, select);
+        return row;
+    };
+
+    const renderForm = () => {
+        const formArea = document.getElementById("formArea");
+        formArea.innerHTML = "";
+
+        const data = langData[currentLang];
+        const form = document.createElement("div");
+
+        form.appendChild(createRow(data.firstName));
+        form.appendChild(createRow(data.lastName));
+        form.appendChild(createSelectRow(data.country, data.countries));
+
+        const button = document.createElement("button");
+        button.textContent = data.button;
+        button.onclick = toggleLanguage;
+
+        form.appendChild(button);
+        formArea.appendChild(form);
+    };
+
+    const toggleLanguage = () => {
+        currentLang = currentLang === "th" ? "en" : "th";
+        renderForm();
+    };
+    renderForm();
+</script>
+
+</body>
+</html>

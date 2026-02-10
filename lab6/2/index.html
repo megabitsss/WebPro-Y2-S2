@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6/2</title>
+    <style>
+        @font-face {
+            font-family: myFont;
+            src: url(SegoeUI.ttf);
+        }
+
+        body {
+            font-family: myFont;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 70%;
+        }
+
+        p {
+            margin: 4px 0px 4px 0px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .card {
+            /* box-shadow: 2px 2px 5px 5px black; */
+            box-shadow: 2px 2px 10px 2px rgb(170, 170, 170);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        function display(data) {
+            var index = 1;
+            data.forEach(function (item) {
+                let container = document.getElementById("container");
+                let card = document.createElement("div");
+                card.className = "card";
+                let img = document.createElement("img");
+                let name = document.createElement("h2");
+                let physics = document.createElement("p");
+                let maths = document.createElement("p");
+                let english = document.createElement("p");
+
+                if (item.gender == "Male") {
+                    img.src = "male.png";
+                } else {
+                    img.src = "female.png";
+                }
+
+                name.appendChild(document.createTextNode(index + ". " + item.name));
+                physics.appendChild(document.createTextNode("Physics : " + item.physics));
+                maths.appendChild(document.createTextNode("Mathematics : " + item.maths));
+                english.appendChild(document.createTextNode("English : " + item.english));
+
+                card.appendChild(img);
+                card.appendChild(name);
+                card.appendChild(physics);
+                card.appendChild(maths);
+                card.appendChild(english);
+
+                container.appendChild(card);
+                index += 1;
+            });
+
+
+            
+        }
+
+        fetch('student-score.json')
+            .then(response => response.json())
+            .then(data => display(data))
+            .catch(error => console.log('error', error))
+
+
+    </script>
+</body>
+</html>

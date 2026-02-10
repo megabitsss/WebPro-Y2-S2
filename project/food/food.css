@@ -1,0 +1,43 @@
+body {
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    margin: 0 auto;
+    /* border: 1px black solid; */
+    background-color: crimson;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.foodHeader {
+    font-size: 2.5rem;
+}
+
+h1, h2 {
+    margin: 0 0;
+}
+
+a {
+    color: white;
+}
+
+.list {
+    text-align: left;
+}

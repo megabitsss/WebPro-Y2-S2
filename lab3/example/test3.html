@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 3</title>
+    <style>
+        #display {
+            background-color: yellowgreen;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is header!!!</h1>
+    <p id="display"></p>
+    <script>
+    let person = {
+        name: "Alan",
+        age: 35,
+        hobby: "painting",
+        salary : 15000
+    };
+    //JavaScript สามารถนำ string + number ได้ จะนำมา concat กัน
+    document.getElementById("display").innerHTML = "My name is " + person.name + ". I am " + person.age + "years old. My hobby is " + person.hobby + " and I earn $"+person.salary+" per month!";
+    </script>
+</body>
+</html>

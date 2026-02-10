@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3/3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>ระบบตัดเกรด</h1>
+        <table id="gradeTable">
+            <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อ</th>
+                <th>คะแนน</th>
+                <th>เกรด</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>John</td>
+                <td id="s1"></td>
+                <td id="g1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Alex</td>
+                <td id="s2"></td>
+                <td id="g2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bob</td>
+                <td id="s3"></td>
+                <td id="g3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Paul</td>
+                <td id="s4"></td>
+                <td id="g4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Taylor</td>
+                <td id="s5"></td>
+                <td id="g5"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Jamal</td>
+                <td id="s6"></td>
+                <td id="g6"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Guts</td>
+                <td id="s7"></td>
+                <td id="g7"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Eren</td>
+                <td id="s8"></td>
+                <td id="g8"></td>
+            </tr>
+        </table>
+        <button id="myBtn" onclick="calculate()">คำนวณเกรด</button>
+    </div>
+    <script>
+        for (let i=1; i<=8; i++) {
+            document.getElementById("s"+i).innerHTML = Math.floor(Math.random() * (100 - 40 + 1)) + 40;
+        }
+
+        function calculate() {
+            for (let i=1; i<=8; i++) {
+                let score = parseInt(document.getElementById("s"+i).innerHTML);
+                // let score = document.getElementById("s"+i);
+                let grade;
+                if (score >= 80) {
+                    grade = "A";
+                } else if (score >= 70) {
+                    grade = "B";
+                } else if (score >= 60) {
+                    grade = "C";
+                } else if (score >= 50) {
+                    grade = "D";
+                } else {
+                    grade = "F";
+                }
+                document.getElementById("g"+i).innerHTML = grade;
+            }
+
+        }
+    </script>
+</body>
+</html>
+
+<!-- Math.floor(Math.random() * 10) (0-9)
+Math.floor(Math.random() * 10) (0-9)
+Math.floor(Math.random() * (100 - 40 + 1)) + 40;-->

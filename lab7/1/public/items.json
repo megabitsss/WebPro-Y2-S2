@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "category": "guitar",
+    "name": "Fender Stratocaster",
+    "brand": "Fender",
+    "price": 1200,
+    "image": "src/guitar1.webp"
+  },
+  {
+    "id": 2,
+    "category": "guitar",
+    "name": "Gibson Les Paul",
+    "brand": "Gibson",
+    "price": 1800,
+    "image": "src/guitar2.webp"
+  },
+  {
+    "id": 3,
+    "category": "guitar",
+    "name": "Ibanez RG550",
+    "brand": "Ibanez",
+    "price": 999,
+    "image": "src/guitar3.webp"
+  },
+
+  {
+    "id": 4,
+    "category": "bass",
+    "name": "Fender Jazz Bass",
+    "brand": "Fender",
+    "price": 1100,
+    "image": "src/bass1.webp"
+  },
+  {
+    "id": 5,
+    "category": "bass",
+    "name": "Music Man StingRay",
+    "brand": "Music Man",
+    "price": 1500,
+    "image": "src/bass2.webp"
+  },
+  {
+    "id": 6,
+    "category": "bass",
+    "name": "Ibanez SR500",
+    "brand": "Ibanez",
+    "price": 850,
+    "image": "src/bass3.avif"
+  },
+
+  {
+    "id": 7,
+    "category": "effect",
+    "name": "Boss DS-1 Distortion",
+    "brand": "Boss",
+    "price": 60,
+    "image": "src/effect1.jpg"
+  },
+  {
+    "id": 8,
+    "category": "effect",
+    "name": "Electro-Harmonix Big Muff",
+    "brand": "EHX",
+    "price": 95,
+    "image": "src/effect2.jpg"
+  },
+  {
+    "id": 9,
+    "category": "effect",
+    "name": "MXR Phase 90",
+    "brand": "MXR",
+    "price": 80,
+    "image": "src/effect3.jpg"
+  }
+]

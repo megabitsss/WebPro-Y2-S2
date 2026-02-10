@@ -1,0 +1,28 @@
+body {
+    color: white;
+    font-size: 12px;
+    font-family: "Google Sans", sans-serif;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    display:block;
+}

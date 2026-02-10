@@ -1,0 +1,35 @@
+body {
+    font-family: "Google Sans", sans-serif;
+}
+
+#bar-1 {
+    background-color: sandybrown;
+    width: 98%;
+}
+
+#bar-2 {
+    background-color: springgreen;
+    width: 32%;
+}
+#bar-3 {
+    background-color: violet;
+    width: 78%;
+}
+
+#bar-4 {
+    background-color: cadetblue;
+    width: 56%;
+}
+
+#bar-5 {
+    background-color: darkkhaki;
+    width: 7%;
+}
+
+table {
+    width: 600px;
+}
+
+th, td {
+    padding: 16px 32px;
+}
