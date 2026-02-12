@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albums</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <%- include("nav") %>
+
+<h1>The most popular albums</h1>
+
+<div class="grid">
+    <% data.forEach(item => { %>
+        <div class="card">
+            <img src="<%= item.album_cover %>" alt="cover">
+            <div class="card-content">
+                <h2><%= item.song %></h2>
+                <p><strong>Album:</strong> <%= item.album %> (<%= item.year %>)</p>
+                <p><strong>Artist:</strong> <%= item.artist %></p>
+                <p><strong>Genre:</strong> <%= item.genre %></p>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+</body>
+</html>

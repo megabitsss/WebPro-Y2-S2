@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background: #4e73df;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #2e59d9;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('nav') %>
+
+    <div class="container">
+        <div class="card">
+            <h1>User Profile</h1>
+
+            <div class="info">
+                <span class="label">Username:</span>
+                <%= user.username %>
+            </div>
+
+            <div class="info">
+                <span class="label">Email:</span>
+                <%= user.email %>
+            </div>
+
+            <div class="info">
+                <span class="label">Firstname:</span>
+                <%= user.firstname %>
+            </div>
+
+            <div class="info">
+                <span class="label">Lastname:</span>
+                <%= user.lastname %>
+            </div>
+
+            <div class="info">
+                <span class="label">Age:</span>
+                <%= user.age %>
+            </div>
+
+            <div class="info">
+                <span class="label">Address:</span>
+                <%= user.address %>
+            </div>
+
+            <div class="info">
+                <span class="label">Phone:</span>
+                <%= user.phone %>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

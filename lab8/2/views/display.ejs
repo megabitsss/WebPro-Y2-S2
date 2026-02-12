@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            border: 3px solid rgb(214, 203, 203);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(24, 24, 24, 0.1);
+            overflow: hidden;
+            background-color: white;
+        }
+
+        th {
+            background-color: salmon;
+        }
+
+        td {
+            background-color: whitesmoke;
+        }
+
+
+            th, td {
+                padding: 12px 14px;
+                text-align: left;
+            }
+
+
+    </style>
+</head>
+<body>
+    <%- include('nav') %>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        <% data.forEach( function(item) { %>
+            <tr>
+                <td><%= item.username %></td>
+                <td><%= item.password %></td>
+                <td><%= item.email %></td>
+                <td><%= item.firstname %></td>
+                <td><%= item.lastname %></td>
+                <td><%= item.age %></td>
+                <td><%= item.address %></td>
+                <td><%= item.phone %></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

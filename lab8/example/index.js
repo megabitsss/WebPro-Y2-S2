@@ -38,7 +38,6 @@ app.get('/create',  (req, res) => {
         console.log("Table created or already exists");
         res.send("Table created or already exists");
     });
-    // then, Insert data into the table
 });
 
 app.get('/insert',  (req, res) => {
